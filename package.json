@@ -1,0 +1,16 @@
+{
+  "name": "desafio-tecnico-backend",
+  "version": "1.0.0",
+  "description": "Desafio para entrar na CUBOS =)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "Marcos Santana, marcos.santana231296@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  }
+}
