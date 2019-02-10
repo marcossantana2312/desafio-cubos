@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js"
   },
-  "author": "Marcos Santana, marcos.santana231296@gmail.com",
+  "author": "Marcos Santana <marcos.santana231296@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "lowdb": "^1.0.0",
     "nodemon": "^1.18.9"
   }
 }
