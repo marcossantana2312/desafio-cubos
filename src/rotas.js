@@ -4,9 +4,11 @@ const rotas = express.Router();
 
 const AtendimentoController = require('./controller/AtendimentoController')
 
-rotas.post('/regra-atendimento/add', AtendimentoController.cadastrar);
+rotas.post('/regras-agendamento', AtendimentoController.cadastrar);
 
-rotas.get('/regra-atendimento/listar', AtendimentoController.listar);
+rotas.get('/regras-agendamento', AtendimentoController.listar);
 
-rotas.delete('/regra-atendimento/apagar/:id', AtendimentoController.apagar);
+rotas.delete('/regras-agendamento/apagar/:id', AtendimentoController.apagar);
+
+rotas.get('/regras-agendamento/disponivel', AtendimentoController.listarPorIntervalo)
 module.exports = rotas;

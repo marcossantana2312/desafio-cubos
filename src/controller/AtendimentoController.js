@@ -1,58 +1,51 @@
-const db = require('../database/database');
-const DateHelper = require('../helper/DateHelper')
-// const regraAtendimento = require('../models/Atendimento');
-const regraAtendimento = {
-    "id": 1,
-    "diasAtendimento": [{
-        "dia":new Date,
-        "horarioAtendimento": {
-            "inicio": "",
-            "fim": ""
-        }
-    }],
-}
-
+const dao = require('../dao/agendamentoDao');
 
 module.exports = {
     
     async cadastrar(req, res){
-        const atendimento = await req.body;
-        console.log(atendimento);
-        // console.log(atendimento.diasAtendimento.dia.toString())
-    
-        atendimento.diasAtendimento = atendimento.diasAtendimento.map(diaAtendimento => {
-            console.log(diaAtendimento.dia);
-            console.log(diaAtendimento.horarioAtendimento);
-            console.log(diaAtendimento.horarioAtendimento);
-            diaAtendimento.dia = DateHelper.rightDateOrder(diaAtendimento.dia);
-            diaAtendimento.horarioAtendimento.inicio = diaAtendimento.horarioAtendimento.inicio;
-            diaAtendimento.horarioAtendimento.fim = diaAtendimento.horarioAtendimento.fim;
-        })
-        console.log(  atendimento.id);
-        atendimento.id += 1;
-        console.log(  atendimento.id);
-        await db.get('regraAtendimento')
-            .push(atendimento)
-            .write();
-    
-        return res.send(atendimento);
+        const agendamento =  req.body;
+        try{
+            await dao.cadastrar(agendamento);
+            res.json(agendamento);
+        }catch(err){
+            console.log(err);
+            res.status(500).json({msg: 'Server internal error'})
+        }
+        
     },
 
     async listar(req, res) {
-        const atendimentos = await db.get('regraAtendimento')
-            .value();
-
-        return res.send(atendimentos);
+        try{
+            const agendamentos = await dao.listarTodos();
+            res.json(agendamentos);
+        }catch(err){
+            console.log(err);
+            res.status(500).json({msg: 'Server internal error'})
+        }
     },
 
     async apagar(req, res){
+        const id = req.params.id;
         try{  
-            await db.get('regraAtendimento')
-                .remove({id: req.params.id}).write();
+            await dao.apagar(id);
             res.sendStatus(204);
         }catch(err){
-            res.status(500).json;   
+            console.log(err);
+            res.status(500).json({msg: 'Server internal error'});   
         }
             
+    },
+
+    async listarPorIntervalo(req, res){
+
+        const {inicio, fim} = req.query;
+        
+        try{
+            const horariosDisponiveis = await dao.listarPorIntervalo(inicio, fim);
+            res.json(horariosDisponiveis);
+        }catch(err){
+            console.log(err);
+            res.status(500).json({msg: 'Server internal error'});
+        }
     }
 }
