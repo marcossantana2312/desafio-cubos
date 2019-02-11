@@ -1,6 +1,202 @@
 {
-  "regraAtendimento": {
-    "dias-atendimento": [],
-    "horario-atendimento": []
-  }
+  "regraAtendimento": [
+    {
+      "diasAtendimento": [
+        {
+          "id": 1,
+          "dia": "2019-02-10T22:54:54.401Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "diasAtendimento": [
+        {
+          "id": 1,
+          "dia": "2019-02-10T22:54:54.401Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "diasAtendimento": [
+        {
+          "id": 1,
+          "dia": "2019-02-10T22:54:54.401Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "diasAtendimento": [
+        {
+          "id": 1,
+          "dia": "2019-02-10T22:55:44.272Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "diasAtendimento": [
+        {
+          "id": 2,
+          "dia": "2019-02-10T22:56:45.278Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:57:35.862Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        {
+          "dia": "2019-02-10T22:58:13.435Z",
+          "horarioAtendimento": {
+            "inicio": "",
+            "fim": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "diasAtendimento": [
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "diasAtendimento": [
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "diasAtendimento": [
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "diasAtendimento": [
+        null
+      ]
+    },
+    {
+      "id": 6,
+      "diasAtendimento": [
+        null
+      ]
+    },
+    {
+      "id": 6,
+      "diasAtendimento": [
+        null
+      ]
+    },
+    {
+      "id": 8,
+      "diasAtendimento": [
+        null
+      ]
+    }
+  ]
 }
