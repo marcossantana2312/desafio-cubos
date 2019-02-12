@@ -41,7 +41,6 @@ module.exports = {
                  })
             }
         })
-        console.log(disponiveis);
         
         return this.tratarDatasDuplicadas(disponiveis);
        

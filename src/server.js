@@ -2,14 +2,15 @@ const express = require('express');
 
 const app = express();
 
-const db = require('./database/database');
+const db = require('./database/Database');
 
 const porta = 3000;
+
 db.defaults({"regraAtendimento": []})
     .write();
     
 app.use(express.json());
-app.use(require('./rotas'));
+app.use(require('./Rotas'));
 
 
 app.listen(porta, ()=>{

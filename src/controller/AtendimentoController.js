@@ -1,4 +1,4 @@
-const dao = require('../dao/agendamentoDao');
+const dao = require('../dao/AgendamentoDao');
 
 module.exports = {
     

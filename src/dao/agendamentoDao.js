@@ -30,8 +30,6 @@ module.exports = {
         
         inicio = helper.textoParaData(inicio);
         fim = helper.textoParaData(fim);
-        console.log(inicio);
-        console.log(fim);
        return helper.extrairIntervaloDisponivel(agendamentos, inicio, fim);
             
     }
