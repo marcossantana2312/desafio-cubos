@@ -15,16 +15,10 @@ module.exports = {
         for (let i = inicio.getDate(); i <= fim.getDate(); i++){
             intervalo.push(new Date(inicio.getFullYear(), inicio.getMonth(), i));
         } 
+        
         var disponiveis = [];
         agendamentos.forEach(agendamento => {
-            if(agendamento.tipo == 'especifico'){
-               intervalo.map(dia => {
-
-                    if(this.dataParaTexto(dia) == this.dataParaTexto(this.textoParaData(agendamento.dias[0]))){
-                       disponiveis.push({dia: this.dataParaTexto(dia), intervalo: agendamento.horario});
-                    }
-                })
-            }else if(agendamento.tipo == 'diario'){
+            if(agendamento.tipo == 'diario'){
                 
                 intervalo.map(dia => {
                     disponiveis.push({dia: this.dataParaTexto(dia), intervalo: agendamento.horario});
@@ -38,25 +32,36 @@ module.exports = {
                         }
                     })
                 })
+            }else if(agendamento.tipo == 'especifico'){
+                intervalo.map(dia => {
+ 
+                     if(this.dataParaTexto(dia) == this.dataParaTexto(this.textoParaData(agendamento.dias[0]))){
+                        disponiveis.push({dia: this.dataParaTexto(dia), intervalo: agendamento.horario});
+                     }
+                 })
             }
         })
-        return this.tratarDatasDuplicadas(disponiveis);
+        console.log(disponiveis);
         
+        return this.tratarDatasDuplicadas(disponiveis);
+       
     },
 
     tratarDatasDuplicadas(disponiveis){
         disponiveis.forEach(dia => {
-            for(let i =0; i< disponiveis.lenght(); i++){
+            for(let i =0; i < disponiveis.length; i++){
                 
                 if(dia.dia == disponiveis[i].dia && dia.intervalo != disponiveis[i].intervalo){
                     dia.intervalo = dia.intervalo.concat(disponiveis[i].intervalo);
-                    dia.slice(1, i)
+                    disponiveis.splice(i, 1);
                     
                 }
             }
         })
+            
         return disponiveis;
         
     }
 
+    
 }

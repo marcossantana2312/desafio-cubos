@@ -20,7 +20,7 @@ module.exports = {
             res.json(agendamentos);
         }catch(err){
             console.log(err);
-            res.status(500).json({msg: 'Server internal error'})
+            res.status(500).json({mensagem: 'Server internal error'})
         }
     },
 
@@ -31,7 +31,7 @@ module.exports = {
             res.sendStatus(204);
         }catch(err){
             console.log(err);
-            res.status(500).json({msg: 'Server internal error'});   
+            res.status(500).json({mensagem: 'Server internal error'});   
         }
             
     },
@@ -45,7 +45,7 @@ module.exports = {
             res.json(horariosDisponiveis);
         }catch(err){
             console.log(err);
-            res.status(500).json({msg: 'Server internal error'});
+            res.status(500).json({mensagem: 'Server internal error'});
         }
     }
 }

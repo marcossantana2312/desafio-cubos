@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "a8168bce-7a11-47cf-9134-96df0fbe83a0",
+		"name": "desafio-cubos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro diario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n \t\"tipo\": \"diario\",\n    \"dias\": [0, 1, 2, 3, 4, 5, 6],\n    \"horario\" : [{\n    \t\"inicio\":\"09:10\",\n    \t\"fim\": \"10:10\"\n    },{\n        \"inicio\":\"14:30\",\n        \"fim\": \"15:30\"\n    }]\n }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/regras-agendamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regras-agendamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro semanal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n \t\"tipo\": \"semanal\",\n    \"dias\": [1, 2],\n    \"horario\" : [{\n    \t\"inicio\":\"10:20\",\n    \t\"fim\": \"11:20\"\n    },{\n        \"inicio\":\"15:30\",\n        \"fim\": \"16:40\"\n    }]\n }\n "
+				},
+				"url": {
+					"raw": "http://localhost:3000/regras-agendamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regras-agendamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro especifico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipo\": \"especifico\",\n    \"dias\": \n        [\"25-02-2019\"]\n    ,\n    \"horario\": [\n        {\n            \"inico\": \"09:10\",\n            \"fim\": \"10:10\"\n        },\n        {\n            \"inicio\": \"14:30\",\n            \"fim\": \"15:30\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/regras-agendamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regras-agendamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar regras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/regras-agendamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regras-agendamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar regra",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/regras-agendamento/apagar/1549929915977",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regras-agendamento",
+						"apagar",
+						"1549929915977"
+					]
+				},
+				"description": "Para apagar uma regra é necessário passar o id da regra a ser apagada após a ultima \"/\" da url.\nExemplo:\n\"http://localhost:3000/regras-agendamento/apagar/1549926837863\""
+			},
+			"response": []
+		},
+		{
+			"name": "Listar por intervalo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/regras-agendamento/disponiveis?inicio=10-02-2019&fim=15-02-2019",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regras-agendamento",
+						"disponiveis"
+					],
+					"query": [
+						{
+							"key": "inicio",
+							"value": "10-02-2019"
+						},
+						{
+							"key": "fim",
+							"value": "15-02-2019"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

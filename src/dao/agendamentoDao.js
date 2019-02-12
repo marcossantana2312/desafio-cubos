@@ -1,5 +1,5 @@
-const db = require('../database/database');
-const helper = require('../util/DateHelper');
+const db = require('../database/Database');
+const helper = require('../helper/DataHelper');
 
 module.exports = {
     
@@ -26,10 +26,13 @@ module.exports = {
     listarPorIntervalo(inicio, fim){
         const agendamentos = db.get('regraAtendimento')
         .value();
-
-       let a =helper.textoParaData(inicio);
-       let b=helper.textoParaData(fim);
-       return helper.extrairIntervaloDisponivel(agendamentos, a, b);
+        
+        
+        inicio = helper.textoParaData(inicio);
+        fim = helper.textoParaData(fim);
+        console.log(inicio);
+        console.log(fim);
+       return helper.extrairIntervaloDisponivel(agendamentos, inicio, fim);
             
     }
 

@@ -10,5 +10,5 @@ rotas.get('/regras-agendamento', AtendimentoController.listar);
 
 rotas.delete('/regras-agendamento/apagar/:id', AtendimentoController.apagar);
 
-rotas.get('/regras-agendamento/disponivel', AtendimentoController.listarPorIntervalo)
+rotas.get('/regras-agendamento/disponiveis', AtendimentoController.listarPorIntervalo)
 module.exports = rotas;
